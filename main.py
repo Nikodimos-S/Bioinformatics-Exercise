@@ -14,12 +14,14 @@ datasetB = all_strings[15:]
 print("Dataset A:", datasetA)
 print("Dataset B:", datasetB)
 
-#perform multiple sequence alignment for datasetA
-aligned_datasetA = multiple_alignment(datasetA, a)
+# Perform multiple alignment
+aligned_datasetA = multiple_alignment(datasetA, a=1)  # Use appropriate gap penalty a
 
-print("Aligned Dataset A:")
-for aligned_string in aligned_datasetA:
-    print(aligned_string)
+# Display results
+print("Aligned Sequences in Dataset A:")
+for i, seq in enumerate(aligned_datasetA):
+    print(f"Seq {i+1:03d}: {seq}")
+
 
 #construct the HMM profile
 hmm_profile = build_hmm_profile(aligned_datasetA)

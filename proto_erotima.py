@@ -1,10 +1,10 @@
 import random
 
-# Patterns
+#patterns
 patterns = ["AATTGA", "CGCTTAT", "GGACTCAT", "TTATTCGTA"]
 alphabet = "ACGT"
 
-#Function for creating a pattern using the alphabet
+#function for creating a pattern using the alphabet
 def modify_pattern(pattern):
     pattern_list = list(pattern)
     indices = random.sample(range(len(pattern)), 2)
@@ -15,7 +15,7 @@ def modify_pattern(pattern):
             pattern_list[index] = ""
     return ''.join(pattern_list)
 
-#Fucntion for making the string
+#fucntion for making the string
 def synthesize_string():
     prefix = ''.join(random.choices(alphabet, k=random.randint(1, 3)))
     synthesized_string = prefix

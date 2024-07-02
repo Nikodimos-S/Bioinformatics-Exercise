@@ -1,20 +1,20 @@
 import numpy as np
 
-# value of alpha
-a = 2  # or 1 depending on the student ID
 
-# function to align two sequences globally
+a = 2  #gia p21150
+
+#function to align two sequences globally
 def global_alignment(s1, s2, a):
     m, n = len(s1), len(s2)
     dp = np.zeros((m+1, n+1))
     
-    # initialization
+    #initialization
     for i in range(1, m+1):
         dp[i][0] = dp[i-1][0] - a
     for j in range(1, n+1):
         dp[0][j] = dp[0][j-1] - a
     
-    # compute the alignment score matrix
+    #compute the alignment score matrix
     for i in range(1, m+1):
         for j in range(1, n+1):
             match = dp[i-1][j-1] + (1 if s1[i-1] == s2[j-1] else -a/2)
@@ -24,7 +24,7 @@ def global_alignment(s1, s2, a):
     
     return dp
 
-# multiple sequence alignment
+#multiple sequence alignment
 def multiple_alignment(strings, a):
     aligned_strings = [strings[0]]
     
@@ -33,7 +33,7 @@ def multiple_alignment(strings, a):
         s2 = strings[i]
         dp = global_alignment(s1, s2, a)
         
-        # reconstruct the alignment
+        #reconstruct the alignment
         aligned_s1, aligned_s2 = "", ""
         i, j = len(s1), len(s2)
         while i > 0 and j > 0:

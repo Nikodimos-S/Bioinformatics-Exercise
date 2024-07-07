@@ -20,7 +20,7 @@ aligned_datasetA = multiple_alignment(datasetA, a=1)  # Use appropriate gap pena
 # Display results
 print("Aligned Sequences in Dataset A:")
 for i, seq in enumerate(aligned_datasetA):
-    print(f"Seq {i+1:03d}: {seq}")
+    print(f"Seq {i+1:02d}: {seq}")
 
 
 #construct the HMM profile
